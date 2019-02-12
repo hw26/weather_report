@@ -1,5 +1,4 @@
 import urllib, json
-from urllib2 import HTTPError,URLError
 
 
 def main():
@@ -11,10 +10,10 @@ def main():
 
 	try:
 	    response = urllib.urlopen(url)
-	except HTTPError as e:
+	except urllib.error.HTTPError as e:
 	    print('The server couldn\'t fulfill the request.')
 	    print('Error code: ', e.code)
-	except URLError as e:
+	except urllib.error.URLError as e:
 	    print('We failed to reach a server.')
 	    print('Reason: ', e.reason)
 	else:
