@@ -21,10 +21,10 @@ def main():
 		data = json.loads(response.read())
 		if data['cod'] != 200:
 			# print data
-			print data['message']
+			print(data['message'])
 			return data['message']
 		degree = ((data['main']['temp'] -273.15)* 5 /9) + 32
-		print user_input + " temprature is " + str(degree) + " fahrenheit"
+		print(user_input + " temprature is " + str(degree) + " fahrenheit")
 		return user_input + " temprature is " + str(degree) + " fahrenheit"
 
 
