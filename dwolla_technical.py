@@ -3,11 +3,10 @@ import urllib, json
 
 def main():
 	user_input = raw_input("Enter the city: ")  
-	return get_temprature(user_input)
 
 
 
-def get_temprature(user_input):
+
 	API_KEY = "3642eae414529c2d868690848fa0fd81"
 	url = "https://api.openweathermap.org/data/2.5/weather?q="
 
