@@ -1,7 +1,6 @@
 import unittest,sys,urllib
 from dwolla_technical import main
 
-
 def raise_HTTPError():
     raise urllib.error.HTTPError(e.url, e.code)
 def raise_URLError():
