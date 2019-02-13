@@ -24,7 +24,8 @@ def main():
 		data = json.loads(response.read())
 		if data['cod'] != 200:
 			sys.stdout.write(data['message'])
-		degree = ((data['main']['temp'] -273.15)* 5 /9) + 32
+			return
+		degree = round((data['main']['temp'] -273.15)* 5 /9) + 32
 		sys.stdout.write(user_input + " temprature is " + str(degree) + " fahrenheit")
 
 if __name__ == '__main__':

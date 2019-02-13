@@ -9,19 +9,19 @@ class TestAnswerReturn(unittest.TestCase):
     	__builtins__.raw_input = lambda _: 'Houston'
         main()
         output = sys.stdout.getvalue().strip()
-        self.assertEqual(output,'Houston temprature is 43.4333333333 fahrenheit')
+        self.assertEqual(output,'Houston temprature is 43 fahrenheit')
 
     def testSanFrancisco(self):
     	__builtins__.raw_input = lambda _:"San Francisco"
         main()
         output = sys.stdout.getvalue().strip()
-        self.assertEqual(output, 'San Francisco temprature is 36.3055555556 fahrenheit')
+        self.assertEqual(output, 'San Francisco temprature is 36 fahrenheit')
 
     def testAtlanta(self):
     	__builtins__.raw_input = lambda _:"Atlanta"
         main()
         output = sys.stdout.getvalue().strip()
-        self.assertEqual(output,'Atlanta temprature is 37.9222222222 fahrenheit')
+        self.assertEqual(output,'Atlanta temprature is 37 fahrenheit')
 
     def testNoCity(self):
     	__builtins__.raw_input = lambda _:"xxx"
