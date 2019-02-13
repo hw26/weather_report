@@ -1,4 +1,4 @@
-import urllib, json
+import urllib, json, sys
 
 
 def main():
@@ -15,20 +15,17 @@ def main():
 	try:
 	    response = urllib.urlopen(url)
 	except urllib.error.HTTPError as e:
-	    print('The server couldn\'t fulfill the request.')
-	    print('Error code: ', e.code)
+	    sys.stdout.write('The server couldn\'t fulfill the request.')
+	    sys.stdout.write('Error code: ', e.code)
 	except urllib.error.URLError as e:
-	    print('We failed to reach a server.')
-	    print('Reason: ', e.reason)
+	    sys.stdout.write('We failed to reach a server.')
+	    sys.stdout.write('Reason: ', e.reason)
 	else:
 		data = json.loads(response.read())
 		if data['cod'] != 200:
-			# print data
-			print(data['message'])
-			return data['message']
+			sys.stdout.write(data['message'])
 		degree = ((data['main']['temp'] -273.15)* 5 /9) + 32
-		print(user_input + " temprature is " + str(degree) + " fahrenheit")
-		return user_input + " temprature is " + str(degree) + " fahrenheit"
+		sys.stdout.write(user_input + " temprature is " + str(degree) + " fahrenheit")
 
 if __name__ == '__main__':
 	main()
